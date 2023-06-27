@@ -5,34 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/26 19:33:56 by eunskim           #+#    #+#              #
-#    Updated: 2023/06/27 21:03:31 by eunskim          ###   ########.fr        #
+#    Created: 2023/06/27 17:30:12 by eunskim           #+#    #+#              #
+#    Updated: 2023/06/27 17:34:11 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
-
-CC = c++
+NAME = phonebook
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRC_DIR = src/
-SRC = megaphone.cpp
-SRCS = $(addprefix $(SRC_DIR),$(SRC))
-
-OBJ_DIR = obj/
-OBJS = $(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRCS))
+HEADERS = \
+PhoneBook.hpp \
+Contact.hpp
+SRCS = \
+PhoneBook.cpp \
+Contact.hpp
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@c++ $(CFLAGS) $(OBJS) -o $(NAME)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
-	@mkdir -p $(@D)
-	@$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.cpp
+	@c++ $(CFLAGS) -c $< -o $@ 
 
 clean:
-	@rm -rf $(OBJ_DIR)
+	@rm -f $(OBJS)
 
 fclean: clean
 	@rm -f $(NAME)

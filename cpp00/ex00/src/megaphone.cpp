@@ -6,13 +6,13 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:30:44 by eunskim           #+#    #+#             */
-/*   Updated: 2023/06/26 19:48:46 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/06/27 17:17:16 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-void	ToUpper(char *str)
+void	toUpper(char *str)
 {
 	int i = 0;
 
@@ -33,10 +33,10 @@ int	main(int argc, char **argv)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	while (i < argc)
 	{
-		ToUpper(argv[i]);
+		toUpper(argv[i]);
 		std::cout << argv[i];
 		i++;
 	}
-	std::cout << '\n';
+	std::cout << std::endl;
 	return (0);
 }
