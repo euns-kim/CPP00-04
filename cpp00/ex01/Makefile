@@ -6,30 +6,51 @@
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 17:30:12 by eunskim           #+#    #+#              #
-#    Updated: 2023/06/27 17:34:11 by eunskim          ###   ########.fr        #
+#    Updated: 2023/06/28 17:18:06 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#//= Colors =//#
+BLACK   := \033[30;1m
+RED     := \033[31;1m
+GREEN   := \033[32;1m
+YELLOW  := \033[33;1m
+BLUE    := \033[34;1m
+MAGENTA := \033[35;1m
+CYAN    := \033[36;1m
+WHITE   := \033[37;1m
+RESET   := \033[0m
+
 NAME = phonebook
+
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-HEADERS = \
-PhoneBook.hpp \
-Contact.hpp
-SRCS = \
+
+INCLUDE_DIR = ./include
+HEADERS = -I $(INCLUDE_DIR)
+
+SRC_DIR = src/
+SRC = \
 PhoneBook.cpp \
-Contact.hpp
-OBJS = $(SRCS:.cpp=.o)
+Contact.cpp
+SRCS = $(addprefix $(SRC_DIR),$(SRC))
+
+OBJ_DIR = obj/
+OBJS = $(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRCS))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@c++ $(CFLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) && \
+	[-t 1] && \
+	echo "$(WHITE)Compilation of $(CYAN)>>$(NAME)<<$(RESET)$(WHITE) successful!$(RESET)"
 
-%.o: %.cpp
-	@c++ $(CFLAGS) -c $< -o $@ 
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) $(HEADERS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJS)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -f $(NAME)

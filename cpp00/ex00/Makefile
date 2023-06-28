@@ -6,9 +6,20 @@
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/26 19:33:56 by eunskim           #+#    #+#              #
-#    Updated: 2023/06/27 21:03:31 by eunskim          ###   ########.fr        #
+#    Updated: 2023/06/28 17:18:34 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+#//= Colors =//#
+BLACK   := \033[30;1m
+RED     := \033[31;1m
+GREEN   := \033[32;1m
+YELLOW  := \033[33;1m
+BLUE    := \033[34;1m
+MAGENTA := \033[35;1m
+CYAN    := \033[36;1m
+WHITE   := \033[37;1m
+RESET   := \033[0m
 
 NAME = megaphone
 
@@ -25,8 +36,10 @@ OBJS = $(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRCS))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) && \
+	[ -t 1 ] && \
+	echo "$(WHITE)Compilation of $(CYAN)>>$(NAME)<<$(RESET)$(WHITE) successful!$(RESET)"
+	
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c $< -o $@
