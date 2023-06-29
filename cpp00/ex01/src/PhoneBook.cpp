@@ -6,9 +6,16 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 16:17:01 by eunskim           #+#    #+#             */
-/*   Updated: 2023/06/28 21:38:25 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/06/29 18:05:39 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/PhoneBook.hpp"
+#include "PhoneBook.hpp"
 
+PhoneBook::PhoneBook(void) {
+	return ;
+}
+
+PhoneBook::~PhoneBook(void) {
+	return ;
+}
