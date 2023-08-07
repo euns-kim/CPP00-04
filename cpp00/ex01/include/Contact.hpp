@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 16:16:49 by eunskim           #+#    #+#             */
-/*   Updated: 2023/06/29 21:46:34 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/08/07 16:27:32 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,26 @@
 # include <string>
 # include <iostream>
 
-
+enum e_Info {
+	FIRST_NAME,
+	LAST_NAME,
+	NICKNAME,
+	PHONE_NUMBER,
+	DARKEST_SECRET,
+	END
+};
 
 class	Contact {
 
 	public:
-		enum Info {
-			FIRST_NAME,
-			LAST_NAME,
-			NICKNAME,
-			PHONE_NUMBER,
-			DARKEST_SECRET
-		};
 		Contact(void);
 		~Contact(void);
-		void		Contact::setContact(enum Info info, const std::string& str);
-		std::string	Contact::getContact(enum Info info);
+		void	setContact(e_Info info, const std::string& str);
+		void	printContactAbbrev() const;
+		void	printContactFull() const;
 
 	private:
+		std::string	Contact::returnAbbreviatedStr(std::string str) const;
 		std::string	_firstName;
 		std::string	_lastName;
 		std::string	_nickname;
