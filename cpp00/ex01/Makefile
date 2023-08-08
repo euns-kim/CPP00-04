@@ -6,7 +6,7 @@
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 17:30:12 by eunskim           #+#    #+#              #
-#    Updated: 2023/08/08 17:58:59 by eunskim          ###   ########.fr        #
+#    Updated: 2023/08/08 20:17:40 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ RESET   := \033[0m
 NAME = phonebook
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
 INCLUDE_DIR = ./include
 HEADERS = -I $(INCLUDE_DIR)

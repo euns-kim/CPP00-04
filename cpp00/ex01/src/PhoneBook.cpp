@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 16:17:01 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/08 19:25:17 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/08/08 22:20:19 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,37 @@ unsigned int	PhoneBook::getIndexFromUser(void)
 {
 	std::string		input;
 	unsigned int	idx;
+	unsigned int	cnt;
 
+	if (_contactNum > 8)
+		cnt = 8;
+	else
+		cnt = _contactNum;
 	while (true)
 	{
-		
+		std::cin.clear();
 		std::cout << "Enter the index of the contact you want to look up: ";
 		std::cin >> std::ws;
 		std::getline(std::cin, input);
 		if (std::cin.eof())
-			break ;
-		else if (input.empty() || !std::isdigit(input[0]))
+			exit(1);
+		if (input.empty() || !std::isdigit(input[0]))
 			std::cerr << "Expected input is a single digit." << std::endl;
 		else
 		{
 			idx = std::stoi(input);
-			if (idx >= 0 && idx <= ((_contactNum % _contactMax)) - 1)
+			if (idx >= 0 && idx < cnt)
 				break ;
 			else
-				std::cerr << "Valid indices are integers between 0 and " \
-				<< ((_contactNum % _contactMax) - 1) << std::endl;
+			{
+				if (_contactNum == 1)
+					std::cerr << "Valid index is 0." << std::endl;
+				else if (_contactNum >= 8)
+					std::cerr << "Valid indices are integers between 0 and 7." << std::endl;
+				else
+					std::cerr << "Valid indices are integers between 0 and " \
+					<< ((_contactNum % _contactMax) - 1) << "." << std::endl;
+			}
 		}
 	}
 	return (idx);
@@ -51,13 +63,18 @@ unsigned int	PhoneBook::getIndexFromUser(void)
 void	PhoneBook::displayPhonebook(void) const
 {
 	unsigned int i = 0;
+	unsigned int cnt = 0;
 
 	std::cout << "|" << std::right << std::setw(10) << "Index" << "|" \
 	<< std::right << std::setw(10) << "First Name" << "|" \
 	<< std::right << std::setw(10) << "Last Name" << "|" \
 	<< std::right << std::setw(10) << "Nickame" << "|" << std::endl;
 
-	while (i < _contactNum)
+	if (_contactNum >= 8)
+		cnt = 8;
+	else
+		cnt = _contactNum;	
+	while (i < cnt)
 	{
 		std::cout << "|";
 		std::cout << std::right << std::setw(10) << i << "|";
@@ -121,6 +138,8 @@ static bool checkValidityUserInput(e_Info info, std::string input)
 {
 	bool	isValid;
 
+	if (std::cin.eof())
+		exit(1);
 	if (info == PHONE_NUMBER)
 		isValid = isValidPhoneNumber(input);
 	else
