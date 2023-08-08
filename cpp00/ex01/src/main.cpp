@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 17:39:42 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/07 14:12:49 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/08/08 19:08:51 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,16 @@ int main(void)
 	{
 		std::cin.clear();
 		std::cout << "Enter a command: ";
-		std::getline(std::cin >> std::ws, cmd_input);
-		if (!cmd_input.compare("EXIT") || std::cin.eof())
+		std::cin >> std::ws;
+		std::getline(std::cin, cmd_input);
+		if (cmd_input == "EXIT" || std::cin.eof())
 			break ;
-		else if (!cmd_input.compare("ADD"))
-			MyAwesomePhoneBook.addContact();
-		else if (cmd_input.compare("SEARCH"))
+		else if (cmd_input == "ADD")
+		{
+			if (MyAwesomePhoneBook.addContact())
+				std::cerr << "Failed to add a new contact." << std::endl;
+		}
+		else if (cmd_input == "SEARCH")
 			MyAwesomePhoneBook.searchContact();
 		else
 			std::cerr << "Valid commands are ADD, SEARCH and EXIT" << std::endl;

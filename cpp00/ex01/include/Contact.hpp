@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 16:16:49 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/07 16:27:32 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:55:00 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string>
 # include <iostream>
+# include <iomanip>
 
 enum e_Info {
 	FIRST_NAME,
@@ -35,7 +36,7 @@ class	Contact {
 		void	printContactFull() const;
 
 	private:
-		std::string	Contact::returnAbbreviatedStr(std::string str) const;
+		std::string	returnAbbreviatedStr(std::string str) const;
 		std::string	_firstName;
 		std::string	_lastName;
 		std::string	_nickname;

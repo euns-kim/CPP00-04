@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 16:16:57 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/07 16:49:31 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/08/08 18:08:31 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ void	Contact::printContactFull(void) const
 {
 	std::cout << "First name:     " << _firstName << std::endl;
 	std::cout << "Last name:      " << _lastName << std::endl;
-	std::cout << "Nickname:       " << _nickName << std::endl;
+	std::cout << "Nickname:       " << _nickname << std::endl;
 	std::cout << "Phone number:   " << _phoneNumber << std::endl;
 	std::cout << "Darkest secret: " << _darkestSecret << std::endl;
 }
 
 std::string	Contact::returnAbbreviatedStr(std::string str) const
 {
-	if (str.length > 10)
-		return (str.substring(0, 9) + ".");
+	if (str.length() > 10)
+		return (str.substr(0, 9) + ".");
 	else
 		return (str);
 }
@@ -41,8 +41,8 @@ std::string	Contact::returnAbbreviatedStr(std::string str) const
 void	Contact::printContactAbbrev(void) const
 {
 	std::cout << std::right << std::setw(10) << returnAbbreviatedStr(_firstName) << "|" \
-	<< std::right << std::setw(10) << returnAbbreviatedStr(_lasttName) << "|" \
-	<< std::right << std::setw(10) << returnAbbreviatedStr(_nickname) << std::endl;
+	<< std::right << std::setw(10) << returnAbbreviatedStr(_lastName) << "|" \
+	<< std::right << std::setw(10) << returnAbbreviatedStr(_nickname) << "|" << std::endl;
 }
 
 void	Contact::setContact(e_Info info, const std::string& str)

@@ -6,7 +6,7 @@
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 17:30:12 by eunskim           #+#    #+#              #
-#    Updated: 2023/06/28 17:18:06 by eunskim          ###   ########.fr        #
+#    Updated: 2023/08/08 17:58:59 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ HEADERS = -I $(INCLUDE_DIR)
 SRC_DIR = src/
 SRC = \
 PhoneBook.cpp \
-Contact.cpp
+Contact.cpp \
+main.cpp
 SRCS = $(addprefix $(SRC_DIR),$(SRC))
 
 OBJ_DIR = obj/
@@ -42,7 +43,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) && \
-	[-t 1] && \
 	echo "$(WHITE)Compilation of $(CYAN)>>$(NAME)<<$(RESET)$(WHITE) successful!$(RESET)"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp

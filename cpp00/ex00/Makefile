@@ -6,7 +6,7 @@
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/26 19:33:56 by eunskim           #+#    #+#              #
-#    Updated: 2023/06/28 17:18:34 by eunskim          ###   ########.fr        #
+#    Updated: 2023/08/08 17:59:12 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) && \
-	[ -t 1 ] && \
 	echo "$(WHITE)Compilation of $(CYAN)>>$(NAME)<<$(RESET)$(WHITE) successful!$(RESET)"
 	
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
