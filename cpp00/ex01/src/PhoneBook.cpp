@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 16:17:01 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/08 22:20:19 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/08/13 17:27:23 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ PhoneBook::~PhoneBook(void) {
 	return ;
 }
 
-unsigned int	PhoneBook::getIndexFromUser(void)
+unsigned int	PhoneBook::getIndexFromUser(void) const
 {
 	std::string		input;
 	unsigned int	idx;
@@ -83,7 +83,7 @@ void	PhoneBook::displayPhonebook(void) const
 	}
 }
 
-int PhoneBook::searchContact(void)
+int PhoneBook::searchContact(void) const
 {
 	int	idx;
 
@@ -152,7 +152,7 @@ static void	takeUserInput(e_Info info, std::string& input)
 	switch (info)
 	{
 		case FIRST_NAME:
-			std::cout << "Enter your firsr name: ";
+			std::cout << "Enter your first name: ";
 			break ;
 		case LAST_NAME:
 			std::cout << "Enter your last name: ";
