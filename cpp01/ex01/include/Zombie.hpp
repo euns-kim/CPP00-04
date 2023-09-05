@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 17:01:55 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/16 13:59:04 by eunskim          ###   ########.fr       */
+/*   Created: 2023/08/16 13:47:29 by eunskim           #+#    #+#             */
+/*   Updated: 2023/09/05 14:09:24 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int	main(void)
-{
-	Zombie*	zombie = newZombie("Glen");
-	if (zombie == nullptr)
-	{
-		std::cerr << "Memory allocation failed." << std::endl;
-		return (1);
-	}
-	zombie->announce();
-	randomChump("Lara");
-	delete zombie;
-	return (0);
-}
+# include <iostream>
+# include <string>
+
+class Zombie {
+
+	public:
+		Zombie( void );
+		~Zombie( void );
+		void	setName( std::string name );
+		void	announce( void );
+
+	private:
+		std::string	_name;
+
+};
+
+Zombie*    zombieHorde( int N, std::string name );
+
+#endif

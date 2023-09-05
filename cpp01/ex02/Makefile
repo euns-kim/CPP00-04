@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/13 16:54:07 by eunskim           #+#    #+#              #
-#    Updated: 2023/09/04 19:01:32 by eunskim          ###   ########.fr        #
+#    Created: 2023/08/16 13:45:31 by eunskim           #+#    #+#              #
+#    Updated: 2023/09/04 19:23:33 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,20 +21,14 @@ CYAN    := \033[36;1m
 WHITE   := \033[37;1m
 RESET   := \033[0m
 
-NAME = Zombie
+NAME = ThisBrain
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 # -fsanitize=address -g3
 
-INCLUDE_DIR = ./include
-HEADERS = -I $(INCLUDE_DIR)
-
 SRC_DIR = ./src/
 SRC = \
-randomChump.cpp \
-newZombie.cpp \
-Zombie.cpp \
 main.cpp
 SRCS = $(addprefix $(SRC_DIR),$(SRC))
 
@@ -49,7 +43,7 @@ $(NAME): $(OBJS)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	@mkdir -p $(@D)
-	@$(CC) $(CFLAGS) $(HEADERS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJ_DIR)

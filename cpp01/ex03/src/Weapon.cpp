@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 17:01:55 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/16 13:59:04 by eunskim          ###   ########.fr       */
+/*   Created: 2023/09/05 13:57:50 by eunskim           #+#    #+#             */
+/*   Updated: 2023/09/05 15:10:59 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include "Weapon.hpp"
 
-int	main(void)
-{
-	Zombie*	zombie = newZombie("Glen");
-	if (zombie == nullptr)
-	{
-		std::cerr << "Memory allocation failed." << std::endl;
-		return (1);
-	}
-	zombie->announce();
-	randomChump("Lara");
-	delete zombie;
-	return (0);
+Weapon::~Weapon( void ) {
+	std::cout << "Weapon " << _type << " destructed." << std::endl;
+	return ;
+}
+
+Weapon::Weapon( void ) {
+	_type = "Default";
+	return ;
+}
+
+Weapon::Weapon( std::string type ) : _type(type) {
+	return ;
+}
+
+const std::string& Weapon::getType() const {
+    return _type;
+}
+
+void	Weapon::setType( std::string type ) {
+	_type = type;
 }

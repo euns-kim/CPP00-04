@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 17:23:08 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/15 17:38:47 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/08/16 13:58:14 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 Zombie*	newZombie( std::string name )
 {
-	Zombie* newZombie = new Zombie(name);
+	Zombie* newZombie = new(std::nothrow) Zombie(name);
 	return (newZombie);
 }

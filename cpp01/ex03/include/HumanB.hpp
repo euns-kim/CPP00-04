@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 17:01:55 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/16 13:59:04 by eunskim          ###   ########.fr       */
+/*   Created: 2023/09/05 14:19:24 by eunskim           #+#    #+#             */
+/*   Updated: 2023/09/05 15:02:15 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-int	main(void)
-{
-	Zombie*	zombie = newZombie("Glen");
-	if (zombie == nullptr)
-	{
-		std::cerr << "Memory allocation failed." << std::endl;
-		return (1);
-	}
-	zombie->announce();
-	randomChump("Lara");
-	delete zombie;
-	return (0);
-}
+# include <iostream>
+# include <string>
+# include "Weapon.hpp"
+
+class HumanB {
+
+	public:
+		HumanB( void );
+		HumanB( const std::string &name );
+		~HumanB( void );
+		void	setWeapon( Weapon &weapon );
+		void	attack( void ) const;
+
+	private:
+		std::string	_name;
+		Weapon		*_weapon;
+
+};
+
+#endif

@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 17:01:55 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/16 13:59:04 by eunskim          ###   ########.fr       */
+/*   Created: 2023/09/05 14:02:16 by eunskim           #+#    #+#             */
+/*   Updated: 2023/09/05 14:23:13 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int	main(void)
-{
-	Zombie*	zombie = newZombie("Glen");
-	if (zombie == nullptr)
-	{
-		std::cerr << "Memory allocation failed." << std::endl;
-		return (1);
-	}
-	zombie->announce();
-	randomChump("Lara");
-	delete zombie;
-	return (0);
-}
+# include <iostream>
+# include <string>
+
+class Weapon {
+
+	public:
+		Weapon( void );
+		Weapon( std::string type );
+		~Weapon( void );
+		const std::string&	getType( void ) const;
+		void				setType( std::string type );
+
+	private:
+		std::string	_type;
+
+};
+
+#endif

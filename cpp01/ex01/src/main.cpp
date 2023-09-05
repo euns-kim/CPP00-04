@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 17:01:55 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/16 13:59:04 by eunskim          ###   ########.fr       */
+/*   Created: 2023/09/04 18:46:44 by eunskim           #+#    #+#             */
+/*   Updated: 2023/09/04 19:17:21 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 int	main(void)
 {
-	Zombie*	zombie = newZombie("Glen");
-	if (zombie == nullptr)
+	Zombie	*myZombies = zombieHorde(10, "Will");
+	for (int i = 0; i < 10; i++)
 	{
-		std::cerr << "Memory allocation failed." << std::endl;
-		return (1);
+		myZombies[i].announce();
 	}
-	zombie->announce();
-	randomChump("Lara");
-	delete zombie;
+	delete[] myZombies;
 	return (0);
 }

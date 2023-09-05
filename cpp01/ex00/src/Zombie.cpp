@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:30:34 by eunskim           #+#    #+#             */
-/*   Updated: 2023/08/15 17:26:37 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/08/16 13:43:40 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ Zombie::Zombie( void ) {
 void	Zombie::announce( void )
 {
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return ;
 }
