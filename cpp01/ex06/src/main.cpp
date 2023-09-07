@@ -6,24 +6,21 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 22:48:30 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/07 15:24:22 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/07 16:33:45 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	Harl	harl;
 
+	if (argc != 2)
+	{
+		std::cerr << "Invalid argument." << std::endl;
+		return (EXIT_FAILURE);
+	}
 	std::cout << std::endl;
-	harl.complain("DEBUG");
-	std::cout << std::endl;
-	harl.complain("INFO");
-	std::cout << std::endl;
-	harl.complain("WARNING");
-	std::cout << std::endl;
-	harl.complain("ERROR");
-	std::cout << std::endl;
-	harl.complain("TEST");
+	harl.complain(argv[1]);
 }

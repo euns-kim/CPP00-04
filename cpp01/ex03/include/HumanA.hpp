@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:19:14 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/05 15:06:51 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/06 18:18:53 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class HumanA {
 
 	public:
-		HumanA( const std::string &name, Weapon &weapon);
+		HumanA( const std::string &name, Weapon &weapon );
 		~HumanA( void );
 		void	attack( void ) const;
 

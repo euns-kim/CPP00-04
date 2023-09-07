@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/06 17:13:00 by eunskim           #+#    #+#              #
-#    Updated: 2023/09/06 17:13:02 by eunskim          ###   ########.fr        #
+#    Created: 2023/09/06 18:03:24 by eunskim           #+#    #+#              #
+#    Updated: 2023/09/07 15:57:37 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CYAN    := \033[36;1m
 WHITE   := \033[37;1m
 RESET   := \033[0m
 
-NAME = AandB
+NAME = harlFilter
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -32,9 +32,7 @@ HEADERS = -I $(INCLUDE_DIR)
 
 SRC_DIR = ./src/
 SRC = \
-HumanB.cpp \
-HumanA.cpp \
-Weapon.cpp \
+Harl.cpp \
 main.cpp
 SRCS = $(addprefix $(SRC_DIR),$(SRC))
 

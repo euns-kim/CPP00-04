@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 18:20:39 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/07 16:30:53 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/07 16:37:31 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,38 @@ void	Harl::complain( std::string level )
 	std::string	levelStr[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 	memFunc		levelFunc[4] = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
 
+	int			levelIdx = 4;
 	for (int i = 0; i < 4; i++)
 	{
 		if (level == levelStr[i])
 		{
-			callMemberFunction(*this, levelFunc[i])();
+			levelIdx = i;
 			break;
 		}
+	}
+	
+	switch (levelIdx)
+	{
+		case 0:
+			std::cout << "[ DEBUG ]" << std::endl;
+			callMemberFunction(*this, levelFunc[0])();
+			std::cout << std::endl;
+		case 1:
+			std::cout << "[ INFO ]" << std::endl;
+			callMemberFunction(*this, levelFunc[1])();
+			std::cout << std::endl;
+		case 2:
+			std::cout << "[ WARNING ]" << std::endl;
+			callMemberFunction(*this, levelFunc[2])();
+			std::cout << std::endl;
+		case 3:
+			std::cout << "[ ERROR ]" << std::endl;
+			callMemberFunction(*this, levelFunc[3])();
+			std::cout << std::endl;
+			break;
+		default:
+			std::cout << "I can't find anything ..." << std::endl;
+			std::cout << std::endl;
+			break;
 	}
 }
