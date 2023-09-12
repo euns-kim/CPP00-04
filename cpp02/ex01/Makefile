@@ -6,7 +6,7 @@
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 19:05:35 by eunskim           #+#    #+#              #
-#    Updated: 2023/09/07 19:05:37 by eunskim          ###   ########.fr        #
+#    Updated: 2023/09/12 15:43:50 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CYAN    := \033[36;1m
 WHITE   := \033[37;1m
 RESET   := \033[0m
 
-NAME = harlFilter
+NAME = ex01
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -32,7 +32,7 @@ HEADERS = -I $(INCLUDE_DIR)
 
 SRC_DIR = ./src/
 SRC = \
-Harl.cpp \
+Fixed.cpp \
 main.cpp
 SRCS = $(addprefix $(SRC_DIR),$(SRC))
 

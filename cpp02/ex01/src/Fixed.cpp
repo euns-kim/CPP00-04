@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:31:58 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/12 15:57:49 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/12 16:02:02 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@ Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->fixed_point_value = 0;
+}
+
+Fixed::Fixed(const int value)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->fixed_point_value = value << fractional_bits;
+}
+
+Fixed::Fixed(const float value)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->fixed_point_value = roundf(value * (1 << fractional_bits));
 }
 
 Fixed::~Fixed(void)
@@ -46,4 +58,20 @@ void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	this->fixed_point_value = raw;
+}
+
+float	Fixed::toFloat(void) const
+{
+	return ((float)this->fixed_point_value / (float)(1 << fractional_bits));
+}
+
+int		Fixed::toInt(void) const
+{
+	return (this->fixed_point_value >> fractional_bits);
+}
+
+std::ostream	&operator<<(std::ostream &o, const Fixed &fixed)
+{
+	o << fixed.toFloat();
+	return (o);
 }

@@ -6,7 +6,7 @@
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 19:05:35 by eunskim           #+#    #+#              #
-#    Updated: 2023/09/11 15:59:50 by eunskim          ###   ########.fr        #
+#    Updated: 2023/09/12 15:43:38 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CYAN    := \033[36;1m
 WHITE   := \033[37;1m
 RESET   := \033[0m
 
-NAME = Fixed
+NAME = ex00
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
