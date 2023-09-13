@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:37:25 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/12 16:44:06 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/13 12:01:35 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(void)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed		a;
+	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
 
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;

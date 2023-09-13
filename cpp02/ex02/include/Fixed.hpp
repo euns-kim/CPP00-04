@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:00:28 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/12 18:30:22 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/13 11:46:45 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -30,6 +31,11 @@ class Fixed
 		Fixed	&operator=(const Fixed &op);
 		~Fixed(void);
 
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		int		toInt(void) const;
+
 		bool	operator>(const Fixed &fixed) const;
 		bool	operator<(const Fixed &fixed) const;
 		bool	operator>=(const Fixed &fixed) const;
@@ -37,15 +43,20 @@ class Fixed
 		bool	operator==(const Fixed &fixed) const;
 		bool	operator!=(const Fixed &fixed) const;
 
-		Fixed	operator+(const Fixed &fixed);
-		Fixed	operator-(const Fixed &fixed);
-		Fixed	operator*(const Fixed &fixed);
-		Fixed	operator/(const Fixed &fixed);
+		Fixed	operator+(const Fixed &fixed) const;
+		Fixed	operator-(const Fixed &fixed) const;
+		Fixed	operator*(const Fixed &fixed) const;
+		Fixed	operator/(const Fixed &fixed) const;
 
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-		float	toFloat(void) const;
-		int		toInt(void) const;
+		Fixed	&operator++(void);	// Prefix increment operator
+		Fixed	operator++(int);	// Postfix increment operator
+		Fixed	&operator--(void);	// Prefix decrement operator
+  		Fixed	operator--(int);	// Postfix decrement operator
+
+		static Fixed	&min(Fixed &a, Fixed &b);
+		static Fixed	&max(Fixed &a, Fixed &b);
+		static const Fixed	&min(const Fixed &a, const Fixed &b);
+		static const Fixed	&max(const Fixed &a, const Fixed &b);
 
 };
 

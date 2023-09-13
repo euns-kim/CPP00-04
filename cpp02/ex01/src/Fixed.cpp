@@ -6,28 +6,18 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:31:58 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/12 16:02:02 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/13 12:01:15 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+/* Orthodox Canonical Form */
+
 Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->fixed_point_value = 0;
-}
-
-Fixed::Fixed(const int value)
-{
-	std::cout << "Int constructor called" << std::endl;
-	this->fixed_point_value = value << fractional_bits;
-}
-
-Fixed::Fixed(const float value)
-{
-	std::cout << "Float constructor called" << std::endl;
-	this->fixed_point_value = roundf(value * (1 << fractional_bits));
 }
 
 Fixed::~Fixed(void)
@@ -48,6 +38,22 @@ Fixed	&Fixed::operator=(const Fixed &op)
 	return (*this);
 }
 
+/* Additional Constructors */
+
+Fixed::Fixed(const int value)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->fixed_point_value = value << fractional_bits;
+}
+
+Fixed::Fixed(const float value)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->fixed_point_value = roundf(value * (1 << fractional_bits));
+}
+
+/* Getter and setter */
+
 int	Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
@@ -60,15 +66,19 @@ void	Fixed::setRawBits(int const raw)
 	this->fixed_point_value = raw;
 }
 
+/* Extended getters */
+
 float	Fixed::toFloat(void) const
 {
-	return ((float)this->fixed_point_value / (float)(1 << fractional_bits));
+	return (static_cast<float>(this->fixed_point_value) / static_cast<float>(1 << fractional_bits));
 }
 
 int		Fixed::toInt(void) const
 {
 	return (this->fixed_point_value >> fractional_bits);
 }
+
+/* Output operator overload */
 
 std::ostream	&operator<<(std::ostream &o, const Fixed &fixed)
 {
