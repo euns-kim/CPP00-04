@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 12:49:12 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/14 18:54:19 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/14 19:15:02 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Point
 
 	private:
 		const Fixed	_x;
-		const Fixed _y;
+		const Fixed	_y;
 		Point	&operator=(const Point &op);
 
 	public:
