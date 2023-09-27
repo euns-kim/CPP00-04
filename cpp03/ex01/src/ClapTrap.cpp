@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:47:47 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/27 13:38:29 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/27 13:38:06 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@
 
 ClapTrap::ClapTrap(void) : _name("Defalt"), _health(10), _energy(10), _attackDamage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "[ClapTrap] Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _attackDamage(0)
 {
-	std::cout << "Name constructor called" << std::endl;
+	std::cout << "[ClapTrap] Name constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "[ClapTrap] Copy constructor called" << std::endl;
 	*this = copy;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &op)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "[ClapTrap] Copy assignment operator called" << std::endl;
 	_name = op._name;
 	_health = op._health;
 	_energy = op._energy;
@@ -42,7 +42,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &op)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "[ClapTrap] Destructor called" << std::endl;
 }
 
 /* Getter and setter */
@@ -143,7 +143,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 	else if (_energy == 0)
 	{
-		std::cout << "No energy left, means even no energy to heal ... what now?" << std::endl;	
+		std::cout << "ClapTrap " << _name << "has no energy left, means even no energy to heal ... what now?" << std::endl;	
 	}
 }
 
