@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:31:58 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/16 16:19:25 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/17 15:57:32 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (static_cast<float>(this->fixed_point_value) / static_cast<float>(1 << fractional_bits));
+	return (static_cast<float>(this->fixed_point_value) / (1 << fractional_bits));
 }
 
 int		Fixed::toInt(void) const
@@ -140,7 +140,7 @@ Fixed	Fixed::operator*(const Fixed &fixed) const
 {
 	Fixed	tmp;
 
-	tmp.setRawBits(static_cast<int>((static_cast<long>(this->fixed_point_value * fixed.getRawBits())) / static_cast<long>(1 << fractional_bits)));
+	tmp.setRawBits(static_cast<int>((static_cast<long>(this->fixed_point_value * fixed.getRawBits())) / (1 << fractional_bits)));
 	return (tmp);
 }
 
@@ -148,7 +148,7 @@ Fixed	Fixed::operator/(const Fixed &fixed) const
 {
 	Fixed	tmp;
 
-	tmp.setRawBits(static_cast<int>((static_cast<long>(this->fixed_point_value * (1 << fractional_bits))) / static_cast<long>(fixed.getRawBits())));
+	tmp.setRawBits(static_cast<int>((static_cast<long>(this->fixed_point_value * (1 << fractional_bits))) / (fixed.getRawBits())));
 	return (tmp);
 }
 

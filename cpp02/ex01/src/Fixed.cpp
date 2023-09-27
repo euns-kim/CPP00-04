@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:31:58 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/16 16:19:56 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/17 15:55:44 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (static_cast<float>(this->fixed_point_value) / static_cast<float>(1 << fractional_bits));
+	return (static_cast<float>(this->fixed_point_value) / (1 << fractional_bits));
 }
 
 int		Fixed::toInt(void) const
