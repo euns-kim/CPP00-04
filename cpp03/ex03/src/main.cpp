@@ -6,46 +6,28 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:47:51 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/27 17:30:58 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/27 21:18:49 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
 	{
-		ClapTrap	A("A");
-		ScavTrap	B("B");
+		DiamondTrap	Cat("Cat");
+		DiamondTrap	Cat2("Cat2");
+		DiamondTrap	Cat3;
+		Cat3 = Cat2;
+		DiamondTrap Cat4(Cat);
+	
+		Cat.printStats();
+		Cat.attack("Cat2");
+		Cat2.takeDamage(Cat.getAttackDamage());
+		Cat2.printStats();
+		Cat.highFivesGuys();
 
-		// ClapTrap	C = A;
-		// ScavTrap	D;
-		// D = B;
-
-		ClapTrap	C("C");
-		ScavTrap	D("D");
-
-		ClapTrap	*p_A = &A;
-		ClapTrap	*p_B = &B;
-
-		p_A->attack("B");
-		B.takeDamage(A.getAttackDamage());
-		p_B->attack("A");
-		A.takeDamage(B.getAttackDamage());
-		B.guardGate();
-		D.attack("B");
-		B.takeDamage(D.getAttackDamage());
-		D.attack("B");
-		B.takeDamage(D.getAttackDamage());
-		B.printStats();
-		D.printStats();
-		B.beRepaired(10);
-		B.printStats();
-		D.setAttackDamage(100);
-		D.printStats();
-		D.attack("B");
-		B.takeDamage(D.getAttackDamage());
-		B.printStats();
-		B.guardGate();
+		Cat3.printStats();
+		Cat4.printStats();
 	}
 }
