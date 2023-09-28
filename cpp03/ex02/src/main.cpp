@@ -6,11 +6,11 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:47:51 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/27 17:52:14 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/28 20:00:48 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
