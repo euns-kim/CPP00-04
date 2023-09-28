@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:47:47 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/27 21:07:47 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/28 17:14:31 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ DiamondTrap::~DiamondTrap(void)
 
 void	DiamondTrap::whoAmI(void)
 {
-	std::cout << "My DiamondTrap name is " << _name << ", and my ClapTrap name is" << ClapTrap::_name << std::endl;
+	std::cout << "My DiamondTrap name is " << _name << ", and my ClapTrap name is " << ClapTrap::_name << std::endl;
 }
