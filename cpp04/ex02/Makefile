@@ -6,7 +6,7 @@
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:48:21 by eunskim           #+#    #+#              #
-#    Updated: 2023/09/29 15:16:49 by eunskim          ###   ########.fr        #
+#    Updated: 2023/09/29 15:16:56 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CYAN    := \033[36;1m
 WHITE   := \033[37;1m
 RESET   := \033[0m
 
-NAME = Brain
+NAME = AAnimal
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
