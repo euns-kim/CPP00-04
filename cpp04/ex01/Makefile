@@ -6,7 +6,7 @@
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:48:21 by eunskim           #+#    #+#              #
-#    Updated: 2023/09/28 22:17:18 by eunskim          ###   ########.fr        #
+#    Updated: 2023/09/29 14:48:55 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,11 @@ CYAN    := \033[36;1m
 WHITE   := \033[37;1m
 RESET   := \033[0m
 
-NAME = Animal
+NAME = Brain
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-# -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror
+# -std=c++98 -fsanitize=address -g3
 
 INCLUDE_DIR = ./include
 HEADERS = -I $(INCLUDE_DIR)
