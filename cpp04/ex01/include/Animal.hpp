@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 21:11:24 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/28 22:01:41 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/09/30 16:27:20 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Animal
 {
 
 	protected:
-		std::string		_type;
+		std::string	_type;
 
 	public:
 		Animal(void);
