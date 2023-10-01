@@ -6,7 +6,7 @@
 #    By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/30 14:51:51 by eunskim           #+#    #+#              #
-#    Updated: 2023/09/30 14:58:26 by eunskim          ###   ########.fr        #
+#    Updated: 2023/10/01 19:45:33 by eunskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,9 +33,7 @@ HEADERS = -I $(INCLUDE_DIR)
 SRC_DIR = ./src/
 SRC = \
 Character.cpp \
-ICharacter.cpp \
 MateriaSource.cpp \
-IMateriaSource.cpp
 AMateria.cpp \
 Ice.cpp \
 Cure.cpp \

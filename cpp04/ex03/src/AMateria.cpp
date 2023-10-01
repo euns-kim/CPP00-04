@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 16:31:47 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/30 17:38:13 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/10/01 19:51:59 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ std::string const	&AMateria::getType(void) const
 
 void	AMateria::use(ICharacter &target)
 {
+	std::cout << SKY << "[AMateria] target name : " << target.getName() << RESET << std::endl;
 	std::cout << SKY << "[AMateria] abstract class function use called" << RESET << std::endl;
 }

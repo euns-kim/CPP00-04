@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 17:49:47 by eunskim           #+#    #+#             */
-/*   Updated: 2023/10/01 15:23:25 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/10/01 19:29:57 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 
 # include "ICharacter.hpp"
 
-class Character
+class Character : public ICharacter
 {
 
 	private:
 		std::string	_name;
+		AMateria	*_inventory[4];
 
 	public:
 		Character(void);
@@ -32,6 +33,7 @@ class Character
 		void				equip(AMateria* m);
 		void				unequip(int idx);
 		void				use(int idx, ICharacter &target);
+
 };
 
 #endif

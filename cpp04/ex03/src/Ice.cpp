@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 17:38:02 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/30 17:38:04 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/10/01 16:59:15 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Ice::~Ice(void)
 
 Ice	*Ice::clone(void) const
 {
-	return (new Ice);
+	return (new Ice(*this));
 }
 
 void	Ice::use(ICharacter &target)

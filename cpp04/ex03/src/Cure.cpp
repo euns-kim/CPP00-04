@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 17:30:32 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/30 17:30:40 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/10/01 16:58:40 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Cure::~Cure(void)
 
 Cure	*Cure::clone(void) const
 {
-	return (new Cure);
+	return (new Cure(*this));
 }
 
 void	Cure::use(ICharacter &target)
