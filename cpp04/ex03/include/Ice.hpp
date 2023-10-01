@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 16:17:41 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/30 17:44:23 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/10/01 15:08:21 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Ice : public AMateria
 		Ice(void);
 		Ice(const Ice &copy);
 		Ice &operator=(const Ice &op);
-		virtual ~Ice(void);
+		~Ice(void);
 
-		virtual Ice		*clone(void) const;
-		virtual void	use(ICharacter &target);
+		AMateria	*clone(void) const;
+		void		use(ICharacter &target);
 
 };
 

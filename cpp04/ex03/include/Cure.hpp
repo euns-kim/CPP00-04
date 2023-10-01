@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 17:30:45 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/30 17:44:19 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/10/01 15:08:25 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Cure : public AMateria
 		Cure(void);
 		Cure(const Cure &copy);
 		Cure &operator=(const Cure &op);
-		virtual ~Cure(void);
+		~Cure(void);
 
-		virtual Cure	*clone(void) const;
-		virtual void	use(ICharacter &target);
+		AMateria	*clone(void) const;
+		void		use(ICharacter &target);
 
 };
 

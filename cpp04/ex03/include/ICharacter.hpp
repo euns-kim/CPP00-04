@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 15:37:49 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/30 17:51:07 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/10/01 15:12:49 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define ICHARACTER_HPP
 
 # include "AMateria.hpp"
+
+# define RESET	"\x1B[0m"
+# define ORANGE	"\x1B[38;2;255;178;102m"
 
 class ICharacter
 {
