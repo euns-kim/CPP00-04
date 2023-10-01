@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 21:11:24 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/30 16:27:20 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/10/01 15:42:47 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define PINK	"\x1B[38;2;255;204;229m"
 # define ORANGE	"\x1B[38;2;255;178;102m"
 # define PEACH	"\x1B[38;2;255;153;153m"
+# define GREY	"\x1B[38;2;224;224;224m"
 
 class Animal
 {

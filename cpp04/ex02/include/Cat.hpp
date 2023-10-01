@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 21:11:24 by eunskim           #+#    #+#             */
-/*   Updated: 2023/09/29 14:24:28 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/10/01 15:07:27 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Cat : public Animal, virtual public Brain
+class Cat : public Animal, public Brain
 {
 
 	private:
