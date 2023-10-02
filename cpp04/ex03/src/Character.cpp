@@ -6,7 +6,7 @@
 /*   By: eunskim <eunskim@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 19:31:16 by eunskim           #+#    #+#             */
-/*   Updated: 2023/10/01 20:00:23 by eunskim          ###   ########.fr       */
+/*   Updated: 2023/10/02 16:21:07 by eunskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ Character::Character(std::string const &name) : _name(name)
 Character::Character(const Character &copy)
 {
 	std::cout << ORANGE << "[Character] Copy constructor called" << RESET << std::endl;
+	for (int i = 0; i < 4; i++)
+		_inventory[i] = NULL;
 	*this = copy;
 }
 
@@ -89,12 +91,12 @@ void	Character::unequip(int idx)
 {
 	if (idx < 0 || idx > 3)
 	{
-		std::cerr << GREY << "Given index is out of range." << RESET << std::endl;
+		std::cerr << GREY << "[Character::unequip] Given index is out of range." << RESET << std::endl;
 		return ;
 	}
 	if (_inventory[idx])
 	{
-		std::cout << ORANGE << "[Character] Materia " << _inventory[idx]->getType() << "successfully unequipped." << RESET << std::endl;
+		std::cout << ORANGE << "[Character] Materia " << _inventory[idx]->getType() << " successfully unequipped." << RESET << std::endl;
 		_inventory[idx] = NULL;
 	}
 	else
@@ -105,11 +107,11 @@ void	Character::use(int idx, ICharacter &target)
 {
 	if (idx < 0 || idx > 3)
 	{
-		std::cerr << GREY << "Given index is out of range." << RESET << std::endl;
+		std::cerr << GREY << "[Character::use] Given index is out of range." << RESET << std::endl;
 		return ;
 	}
 	if (_inventory[idx])
 		_inventory[idx]->use(target);
 	else
-		std::cerr << GREY << "[Character] Inventory of " << _name << " is now full." << RESET << std::endl;
+		std::cerr << GREY << "[Character] No materia found in the inventory." << RESET << std::endl;
 }

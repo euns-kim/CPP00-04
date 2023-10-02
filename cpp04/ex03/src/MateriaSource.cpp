@@ -12,6 +12,8 @@ MateriaSource::MateriaSource(void)
 MateriaSource::MateriaSource(const MateriaSource &copy)
 {
 	std::cout << PINK << "[MateriaSource] Copy constructor called" << RESET << std::endl;
+	for (int i = 0; i < 4; i++)
+		_materiaSource[i] = NULL;
 	*this = copy;
 }
 
@@ -52,12 +54,12 @@ void	MateriaSource::learnMateria(AMateria* m)
 		{
 			_materiaSource[i] = m;
 			learnt = true;
-			std::cout << PINK << "[Character] Materia " << _materiaSource[i]->getType() << " successfully learnt." << RESET << std::endl;
+			std::cout << PINK << "[MateriaSource] Materia " << _materiaSource[i]->getType() << " successfully learnt." << RESET << std::endl;
 			break;
 		}
 	}
 	if (learnt == false)
-		std::cerr << GREY << "[Character] Materia source has no capacity to learn more materia." << RESET << std::endl;
+		std::cerr << GREY << "[MateriaSource] Materia source has no capacity to learn more materia." << RESET << std::endl;
 }
 
 AMateria*	MateriaSource::createMateria(std::string const &type)
@@ -65,7 +67,11 @@ AMateria*	MateriaSource::createMateria(std::string const &type)
 	for (int i = 0; i < 4; i++)
 	{
 		if (type == _materiaSource[i]->getType())
+		{
+			std::cout << PINK << "[MateriaSource] Materia " << _materiaSource[i]->getType() << " successfully created." << RESET << std::endl;
 			return (_materiaSource[i]->clone());
+		}
+			
 	}
 	return (0);
 }
