@@ -71,7 +71,6 @@ AMateria*	MateriaSource::createMateria(std::string const &type)
 			std::cout << PINK << "[MateriaSource] Materia " << _materiaSource[i]->getType() << " successfully created." << RESET << std::endl;
 			return (_materiaSource[i]->clone());
 		}
-			
 	}
 	return (0);
 }
